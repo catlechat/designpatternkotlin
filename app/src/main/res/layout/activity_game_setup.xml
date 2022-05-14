@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/emptybackground"
+    tools:context=".GameSetupActivity">
+
+    <TextView
+        android:id="@+id/gameSetupText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/backgroundLight"
+        android:text="Game Setup"
+        android:textSize="30sp"
+        android:layout_marginTop="50dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        />
+
+
+    <TextView
+        android:id="@+id/numberPlayersText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/backgroundLight"
+        android:text="Select number of players"
+        android:textSize="20sp"
+        android:layout_marginTop="50dp"
+        app:layout_constraintTop_toTopOf="@id/gameSetupText"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        />
+
+
+    <RadioGroup
+        android:id="@+id/radioGroup1"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/numberPlayersText"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+        <RadioButton
+            android:id="@+id/radio1"
+            android:textColor="@color/backgroundLight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="Two" />
+
+        <RadioButton
+            android:id="@+id/radio2"
+            android:textColor="@color/backgroundLight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Three" />
+
+        <RadioButton
+            android:id="@+id/radio3"
+            android:textColor="@color/backgroundLight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Four" />
+
+    </RadioGroup>
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/player1Name"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/radioGroup1"
+        android:backgroundTint="@color/backgroundLight"
+        android:textColor="@color/backgroundLight"
+        android:hint="Player 1"
+        />
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/player2Name"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/player1Name"
+        android:backgroundTint="@color/backgroundLight"
+        android:textColor="@color/backgroundLight"
+        android:hint="Player 2"
+        />
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/player3Name"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/player2Name"
+        android:backgroundTint="@color/backgroundLight"
+        android:textColor="@color/backgroundLight"
+        android:hint="Player 3"
+        />
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/player4Name"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/player3Name"
+        android:backgroundTint="@color/backgroundLight"
+        android:textColor="@color/backgroundLight"
+        android:hint="Player 4"
+        />
+
+
+    <Button
+        android:id="@+id/loadGameButtoin"
+        android:layout_width="70sp"
+        android:layout_height="60sp"
+        android:backgroundTint="@color/backgroundLight"
+        android:text="OK"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:layout_marginTop="40dp"
+        app:layout_constraintTop_toBottomOf="@id/player4Name"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
