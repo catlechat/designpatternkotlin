@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/emptybackground"
+    tools:context=".GameSetupActivity">
+
+    <TextView
+        android:id="@+id/gameSetupText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/backgroundLight"
+        android:text="Score"
+        android:textSize="30sp"
+        android:layout_marginTop="50dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/teamone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/backgroundLight"
+        android:text="team 1"
+        android:textSize="20sp"
+        android:layout_marginTop="50dp"
+        app:layout_constraintTop_toBottomOf="@id/gameSetupText"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/teamtwo"
+        />
+    <TextView
+        android:id="@+id/teamtwo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/backgroundLight"
+        android:text="team 2"
+        android:textSize="20sp"
+        android:layout_marginTop="50dp"
+        app:layout_constraintTop_toBottomOf="@id/gameSetupText"
+        app:layout_constraintLeft_toRightOf="@id/teamone"
+        app:layout_constraintRight_toRightOf="parent"
+
+        />
+    <TextView
+        android:id="@+id/teamthree"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/backgroundLight"
+        android:text="team 3"
+        android:textSize="20sp"
+        android:layout_marginTop="50dp"
+        app:layout_constraintTop_toBottomOf="@id/buttonplusone"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/teamfour"
+
+        />
+    <TextView
+        android:id="@+id/teamfour"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/backgroundLight"
+        android:text="team 4"
+        android:textSize="20sp"
+        android:layout_marginTop="50dp"
+        app:layout_constraintTop_toBottomOf="@id/buttonplustwo"
+        app:layout_constraintLeft_toRightOf="@id/teamthree"
+        app:layout_constraintRight_toRightOf="parent"
+
+        />
+    <TextView
+        android:id="@+id/scoreone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/backgroundLight"
+        android:text="score 1"
+        android:textSize="20sp"
+        app:layout_constraintLeft_toLeftOf="@id/teamone"
+        app:layout_constraintRight_toRightOf="@id/teamone"
+        app:layout_constraintTop_toBottomOf="@id/teamone"
+        android:layout_marginTop="30dp"
+        />
+    <TextView
+        android:id="@+id/scoretwo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/backgroundLight"
+        android:text="score 2"
+        android:textSize="20sp"
+        app:layout_constraintLeft_toLeftOf="@id/teamtwo"
+        app:layout_constraintRight_toRightOf="@id/teamtwo"
+        app:layout_constraintTop_toBottomOf="@id/teamtwo"
+        android:layout_marginTop="30dp"
+        />
+
+    <Button
+        android:id="@+id/buttonplusone"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:text="+"
+        android:textSize="20sp"
+        android:backgroundTint="@color/backgroundLight"
+        app:layout_constraintLeft_toLeftOf="@id/scoreone"
+        android:layout_marginLeft="-20dp"
+        app:layout_constraintTop_toBottomOf="@id/scoreone"
+        android:layout_marginTop="20sp"
+        />
+    <Button
+        android:id="@+id/buttonminusone"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:text="-"
+        android:textSize="20sp"
+        android:backgroundTint="@color/backgroundLight"
+
+        app:layout_constraintRight_toRightOf="@id/scoreone"
+        app:layout_constraintTop_toBottomOf="@id/scoreone"
+        android:layout_marginRight="-20dp"
+        android:layout_marginTop="20sp"
+        />
+
+
+    <Button
+        android:id="@+id/buttonplustwo"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:text="+"
+        android:textSize="20sp"
+        android:backgroundTint="@color/backgroundLight"
+        app:layout_constraintLeft_toLeftOf="@id/scoretwo"
+        android:layout_marginLeft="-20dp"
+        app:layout_constraintTop_toBottomOf="@id/scoretwo"
+        android:layout_marginTop="20sp"
+        />
+    <Button
+        android:id="@+id/buttonminustwo"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:text="-"
+        android:textSize="20sp"
+        android:backgroundTint="@color/backgroundLight"
+
+        app:layout_constraintRight_toRightOf="@id/scoretwo"
+        app:layout_constraintTop_toBottomOf="@id/scoretwo"
+        android:layout_marginRight="-20dp"
+        android:layout_marginTop="20sp"
+        />
+
+    <TextView
+        android:id="@+id/scorethree"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/backgroundLight"
+        android:text="score 3"
+        android:textSize="20sp"
+        app:layout_constraintLeft_toLeftOf="@id/teamthree"
+        app:layout_constraintRight_toRightOf="@id/teamthree"
+        app:layout_constraintTop_toBottomOf="@id/teamthree"
+        android:layout_marginTop="30dp"
+        />
+    <TextView
+        android:id="@+id/scorefour"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/backgroundLight"
+        android:text="score 2"
+        android:textSize="20sp"
+        app:layout_constraintLeft_toLeftOf="@id/teamfour"
+        app:layout_constraintRight_toRightOf="@id/teamfour"
+        app:layout_constraintTop_toBottomOf="@id/teamfour"
+        android:layout_marginTop="30dp"
+        />
+
+    <Button
+        android:id="@+id/buttonplusthree"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:text="+"
+        android:textSize="20sp"
+        android:backgroundTint="@color/backgroundLight"
+        app:layout_constraintLeft_toLeftOf="@id/scorethree"
+        android:layout_marginLeft="-20dp"
+        app:layout_constraintTop_toBottomOf="@id/scorethree"
+        android:layout_marginTop="20sp"
+        />
+    <Button
+        android:id="@+id/buttonminusthree"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:text="-"
+        android:textSize="20sp"
+        android:backgroundTint="@color/backgroundLight"
+
+        app:layout_constraintRight_toRightOf="@id/scorethree"
+        app:layout_constraintTop_toBottomOf="@id/scorethree"
+        android:layout_marginRight="-20dp"
+        android:layout_marginTop="20sp"
+        />
+
+    <Button
+        android:id="@+id/buttonplusfour"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:text="+"
+        android:textSize="20sp"
+        android:backgroundTint="@color/backgroundLight"
+        app:layout_constraintLeft_toLeftOf="@id/scorefour"
+        android:layout_marginLeft="-20dp"
+        app:layout_constraintTop_toBottomOf="@id/scorefour"
+        android:layout_marginTop="20sp"
+        />
+    <Button
+        android:id="@+id/buttonminusfour"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:text="-"
+        android:textSize="20sp"
+        android:backgroundTint="@color/backgroundLight"
+
+        app:layout_constraintRight_toRightOf="@id/scorefour"
+        app:layout_constraintTop_toBottomOf="@id/scorefour"
+        android:layout_marginRight="-20dp"
+        android:layout_marginTop="20sp"
+        />
+
+    <Button
+        android:id="@+id/buttonfinish"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:text="Finish"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="50dp"
+    />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
