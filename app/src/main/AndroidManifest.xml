@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TarotDesignPattern">
         <activity
+            android:name=".GameActivity"
+            android:exported="false" />
+        <activity
             android:name=".GameSetupActivity"
             android:exported="false" />
         <activity

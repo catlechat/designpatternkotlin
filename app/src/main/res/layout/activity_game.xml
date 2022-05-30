@@ -6,14 +6,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/emptybackground"
-    tools:context=".GameSetupActivity">
+    tools:context=".GameActivity">
 
     <TextView
         android:id="@+id/gameSetupText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@color/backgroundLight"
-        android:text="Score"
+        android:text="Live score Entry"
         android:textSize="30sp"
         android:layout_marginTop="50dp"
         app:layout_constraintTop_toTopOf="parent"
@@ -22,53 +22,53 @@
         />
 
     <TextView
-        android:id="@+id/teamone"
+        android:id="@+id/playerone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@color/backgroundLight"
-        android:text="team 1"
-        android:textSize="20sp"
+        android:text="Player 1"
+        android:textSize="30sp"
         android:layout_marginTop="50dp"
         app:layout_constraintTop_toBottomOf="@id/gameSetupText"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toLeftOf="@id/teamtwo"
+        app:layout_constraintRight_toLeftOf="@id/playertwo"
         />
     <TextView
-        android:id="@+id/teamtwo"
+        android:id="@+id/playertwo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@color/backgroundLight"
-        android:text="team 2"
-        android:textSize="20sp"
+        android:text="Player 2"
+        android:textSize="30sp"
         android:layout_marginTop="50dp"
         app:layout_constraintTop_toBottomOf="@id/gameSetupText"
-        app:layout_constraintLeft_toRightOf="@id/teamone"
+        app:layout_constraintLeft_toRightOf="@id/playerone"
         app:layout_constraintRight_toRightOf="parent"
 
         />
     <TextView
-        android:id="@+id/teamthree"
+        android:id="@+id/playerthree"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@color/backgroundLight"
-        android:text="team 3"
-        android:textSize="20sp"
+        android:text="Player 3"
+        android:textSize="30sp"
         android:layout_marginTop="50dp"
         app:layout_constraintTop_toBottomOf="@id/buttonplusone"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toLeftOf="@id/teamfour"
+        app:layout_constraintRight_toLeftOf="@id/playerfour"
 
         />
     <TextView
-        android:id="@+id/teamfour"
+        android:id="@+id/playerfour"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@color/backgroundLight"
-        android:text="team 4"
-        android:textSize="20sp"
+        android:text="Player 4"
+        android:textSize="30sp"
         android:layout_marginTop="50dp"
         app:layout_constraintTop_toBottomOf="@id/buttonplustwo"
-        app:layout_constraintLeft_toRightOf="@id/teamthree"
+        app:layout_constraintLeft_toRightOf="@id/playerthree"
         app:layout_constraintRight_toRightOf="parent"
 
         />
@@ -77,24 +77,24 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@color/backgroundLight"
-        android:text="score 1"
-        android:textSize="20sp"
-        app:layout_constraintLeft_toLeftOf="@id/teamone"
-        app:layout_constraintRight_toRightOf="@id/teamone"
-        app:layout_constraintTop_toBottomOf="@id/teamone"
-        android:layout_marginTop="30dp"
+        android:text="score 0"
+        android:textSize="25sp"
+        app:layout_constraintLeft_toLeftOf="@id/playerone"
+        app:layout_constraintRight_toRightOf="@id/playerone"
+        app:layout_constraintTop_toBottomOf="@id/playerone"
+        android:layout_marginTop="10dp"
         />
     <TextView
         android:id="@+id/scoretwo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@color/backgroundLight"
-        android:text="score 2"
-        android:textSize="20sp"
-        app:layout_constraintLeft_toLeftOf="@id/teamtwo"
-        app:layout_constraintRight_toRightOf="@id/teamtwo"
-        app:layout_constraintTop_toBottomOf="@id/teamtwo"
-        android:layout_marginTop="30dp"
+        android:text="score 0"
+        android:textSize="25sp"
+        app:layout_constraintLeft_toLeftOf="@id/playertwo"
+        app:layout_constraintRight_toRightOf="@id/playertwo"
+        app:layout_constraintTop_toBottomOf="@id/playertwo"
+        android:layout_marginTop="10dp"
         />
 
     <Button
@@ -102,25 +102,24 @@
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:text="+"
-        android:textSize="20sp"
+        android:textSize="25sp"
+        android:padding="0dp"
         android:backgroundTint="@color/backgroundLight"
-        app:layout_constraintLeft_toLeftOf="@id/scoreone"
-        android:layout_marginLeft="-20dp"
+        app:layout_constraintLeft_toLeftOf="@id/playerone"
         app:layout_constraintTop_toBottomOf="@id/scoreone"
-        android:layout_marginTop="20sp"
+        android:layout_marginTop="10dp"
         />
     <Button
         android:id="@+id/buttonminusone"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:text="-"
-        android:textSize="20sp"
+        android:textSize="25sp"
+        android:padding="0dp"
         android:backgroundTint="@color/backgroundLight"
-
-        app:layout_constraintRight_toRightOf="@id/scoreone"
+        app:layout_constraintRight_toRightOf="@id/playerone"
         app:layout_constraintTop_toBottomOf="@id/scoreone"
-        android:layout_marginRight="-20dp"
-        android:layout_marginTop="20sp"
+        android:layout_marginTop="10sp"
         />
 
 
@@ -128,26 +127,26 @@
         android:id="@+id/buttonplustwo"
         android:layout_width="50dp"
         android:layout_height="wrap_content"
-        android:text="+"
-        android:textSize="20sp"
+        android:layout_marginTop="10sp"
         android:backgroundTint="@color/backgroundLight"
-        app:layout_constraintLeft_toLeftOf="@id/scoretwo"
-        android:layout_marginLeft="-20dp"
-        app:layout_constraintTop_toBottomOf="@id/scoretwo"
-        android:layout_marginTop="20sp"
-        />
+        android:text="+"
+        android:textSize="25sp"
+        android:padding="0dp"
+
+        app:layout_constraintLeft_toLeftOf="@id/playertwo"
+        app:layout_constraintTop_toBottomOf="@id/scoretwo" />
+
     <Button
         android:id="@+id/buttonminustwo"
         android:layout_width="50dp"
         android:layout_height="wrap_content"
         android:text="-"
-        android:textSize="20sp"
+        android:textSize="25sp"
+        android:padding="0dp"
         android:backgroundTint="@color/backgroundLight"
-
-        app:layout_constraintRight_toRightOf="@id/scoretwo"
+        app:layout_constraintRight_toRightOf="@id/playertwo"
         app:layout_constraintTop_toBottomOf="@id/scoretwo"
-        android:layout_marginRight="-20dp"
-        android:layout_marginTop="20sp"
+        android:layout_marginTop="10sp"
         />
 
     <TextView
@@ -155,24 +154,24 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@color/backgroundLight"
-        android:text="score 3"
-        android:textSize="20sp"
-        app:layout_constraintLeft_toLeftOf="@id/teamthree"
-        app:layout_constraintRight_toRightOf="@id/teamthree"
-        app:layout_constraintTop_toBottomOf="@id/teamthree"
-        android:layout_marginTop="30dp"
+        android:text="score 0"
+        android:textSize="25sp"
+        app:layout_constraintLeft_toLeftOf="@id/playerthree"
+        app:layout_constraintRight_toRightOf="@id/playerthree"
+        app:layout_constraintTop_toBottomOf="@id/playerthree"
+        android:layout_marginTop="10dp"
         />
     <TextView
         android:id="@+id/scorefour"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@color/backgroundLight"
-        android:text="score 2"
-        android:textSize="20sp"
-        app:layout_constraintLeft_toLeftOf="@id/teamfour"
-        app:layout_constraintRight_toRightOf="@id/teamfour"
-        app:layout_constraintTop_toBottomOf="@id/teamfour"
-        android:layout_marginTop="30dp"
+        android:text="score 0"
+        android:textSize="25sp"
+        app:layout_constraintLeft_toLeftOf="@id/playerfour"
+        app:layout_constraintRight_toRightOf="@id/playerfour"
+        app:layout_constraintTop_toBottomOf="@id/playerfour"
+        android:layout_marginTop="10dp"
         />
 
     <Button
@@ -180,25 +179,24 @@
         android:layout_width="50dp"
         android:layout_height="wrap_content"
         android:text="+"
-        android:textSize="20sp"
+        android:textSize="25sp"
+        android:padding="0dp"
         android:backgroundTint="@color/backgroundLight"
-        app:layout_constraintLeft_toLeftOf="@id/scorethree"
-        android:layout_marginLeft="-20dp"
+        app:layout_constraintLeft_toLeftOf="@id/playerthree"
         app:layout_constraintTop_toBottomOf="@id/scorethree"
-        android:layout_marginTop="20sp"
+        android:layout_marginTop="10sp"
         />
     <Button
         android:id="@+id/buttonminusthree"
         android:layout_width="50dp"
         android:layout_height="wrap_content"
         android:text="-"
-        android:textSize="20sp"
+        android:padding="0dp"
+        android:textSize="25sp"
         android:backgroundTint="@color/backgroundLight"
-
-        app:layout_constraintRight_toRightOf="@id/scorethree"
+        app:layout_constraintRight_toRightOf="@id/playerthree"
         app:layout_constraintTop_toBottomOf="@id/scorethree"
-        android:layout_marginRight="-20dp"
-        android:layout_marginTop="20sp"
+        android:layout_marginTop="10sp"
         />
 
     <Button
@@ -206,25 +204,24 @@
         android:layout_width="50dp"
         android:layout_height="wrap_content"
         android:text="+"
-        android:textSize="20sp"
+        android:padding="0dp"
+        android:textSize="25sp"
         android:backgroundTint="@color/backgroundLight"
-        app:layout_constraintLeft_toLeftOf="@id/scorefour"
-        android:layout_marginLeft="-20dp"
+        app:layout_constraintLeft_toLeftOf="@id/playerfour"
         app:layout_constraintTop_toBottomOf="@id/scorefour"
-        android:layout_marginTop="20sp"
+        android:layout_marginTop="10sp"
         />
     <Button
         android:id="@+id/buttonminusfour"
         android:layout_width="50dp"
         android:layout_height="wrap_content"
         android:text="-"
-        android:textSize="20sp"
+        android:padding="0dp"
+        android:textSize="25sp"
         android:backgroundTint="@color/backgroundLight"
-
-        app:layout_constraintRight_toRightOf="@id/scorefour"
+        app:layout_constraintRight_toRightOf="@id/playerfour"
         app:layout_constraintTop_toBottomOf="@id/scorefour"
-        android:layout_marginRight="-20dp"
-        android:layout_marginTop="20sp"
+        android:layout_marginTop="10sp"
         />
 
     <Button
@@ -232,11 +229,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="20sp"
-        android:text="Finish"
+        android:text="Game Over"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         android:layout_marginBottom="50dp"
-    />
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
