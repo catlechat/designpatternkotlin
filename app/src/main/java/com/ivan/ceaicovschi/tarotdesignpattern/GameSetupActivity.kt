@@ -1,8 +1,10 @@
 package com.ivan.ceaicovschi.tarotdesignpattern
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.Button
 import android.widget.RadioGroup
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.textfield.TextInputEditText
@@ -28,6 +30,13 @@ class GameSetupActivity : AppCompatActivity() {
                 2 -> fourPlayersMod(playersArray)
             }
         }
+        val okClick = findViewById<Button>(R.id.loadGameButtoin)
+        okClick.setOnClickListener {
+            val intent = Intent(this, GameActivity::class.java)
+            startActivity(intent)
+        }
+
+
     }
 
     fun twoPlayersMod(arr: List<TextInputEditText>){
