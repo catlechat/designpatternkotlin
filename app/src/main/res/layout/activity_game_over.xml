@@ -20,18 +20,54 @@
         app:layout_constraintRight_toRightOf="parent"
         />
 
+
     <TextView
         android:id="@+id/playerWin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="296dp"
+        android:layout_marginTop="80dp"
         android:text="Player X win"
         android:textColor="@color/backgroundLight"
-        android:textSize="30sp"
-        app:layout_constraintTop_toBottomOf="@id/gameOverText"
+        android:textSize="50sp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        />
+        app:layout_constraintTop_toBottomOf="@id/gameOverText" />
+
+    <TextView
+        android:id="@+id/playerSecond"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:text="Player X Second"
+        android:textColor="@color/backgroundLight"
+        android:textSize="30sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/playerWin" />
+
+    <TextView
+        android:id="@+id/playerThird"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:text="Player X Third"
+        android:textColor="@color/backgroundLight"
+        android:textSize="30sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/playerSecond" />
+
+    <TextView
+        android:id="@+id/playerLoser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:text="Player X Loser"
+        android:textColor="@color/backgroundLight"
+        android:textSize="30sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/playerThird" />
 
     <Button
         android:id="@+id/playAgainButton"
