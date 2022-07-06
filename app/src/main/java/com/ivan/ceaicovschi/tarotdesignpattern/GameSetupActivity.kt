@@ -53,7 +53,7 @@ class GameSetupActivity : AppCompatActivity() {
             intent.putExtra("args", args);
 
             startActivity(intent)
-            presenter.onValidate(playersNames.map { textInput -> textInput.text.toString()  })
+            presenter.onValidate(playersNames.map { textInput -> textInput.toString()  })
         }
 
 
