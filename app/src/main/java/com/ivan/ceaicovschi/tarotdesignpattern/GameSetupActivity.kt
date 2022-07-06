@@ -2,7 +2,6 @@ package com.ivan.ceaicovschi.tarotdesignpattern
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.widget.Button
 import android.widget.RadioGroup
@@ -18,8 +17,9 @@ class GameSetupActivity : AppCompatActivity() {
         val player2Name: TextInputEditText = findViewById<View>(R.id.player2Name) as TextInputEditText
         val player3Name: TextInputEditText = findViewById<View>(R.id.player3Name) as TextInputEditText
         val player4Name: TextInputEditText = findViewById<View>(R.id.player4Name) as TextInputEditText
-        val playersArray = listOf(player1Name,player2Name,player3Name,player4Name)//read only, fix-size
+        val playersArray = arrayListOf(player1Name,player2Name,player3Name,player4Name)//read only, fix-size
         val radioGroup: RadioGroup = findViewById<View>(R.id.radioGroup1) as RadioGroup
+
 
         //default value
         twoPlayersMod(playersArray)
@@ -32,7 +32,17 @@ class GameSetupActivity : AppCompatActivity() {
         }
         val okClick = findViewById<Button>(R.id.loadGameButtoin)
         okClick.setOnClickListener {
+            val playersNames = arrayListOf(
+                player1Name.text,
+                player2Name.text,
+                player3Name.text,
+                player4Name.text)
             val intent = Intent(this, GameActivity::class.java)
+
+            val args = Bundle()
+            args.putSerializable("players", playersNames)
+            intent.putExtra("args", args);
+
             startActivity(intent)
         }
 
