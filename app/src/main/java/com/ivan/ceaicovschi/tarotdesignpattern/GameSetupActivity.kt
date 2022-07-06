@@ -41,7 +41,17 @@ class GameSetupActivity : AppCompatActivity() {
         }
         val okClick = findViewById<Button>(R.id.loadGameButtoin)
         okClick.setOnClickListener {
+            val playersNames = arrayListOf(
+                player1Name.text,
+                player2Name.text,
+                player3Name.text,
+                player4Name.text)
             val intent = Intent(this, GameActivity::class.java)
+
+            val args = Bundle()
+            args.putSerializable("players", playersNames)
+            intent.putExtra("args", args);
+
             startActivity(intent)
             presenter.onValidate(playersNames.map { textInput -> textInput.text.toString()  })
         }
