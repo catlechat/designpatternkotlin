@@ -2,19 +2,28 @@ package com.ivan.ceaicovschi.tarotdesignpattern
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.Button
 import android.widget.RadioGroup
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.ViewModelProvider
 import com.google.android.material.textfield.TextInputEditText
 
 
 class GameSetupActivity : AppCompatActivity() {
+
+    private lateinit var viewModelFactory: GameSetupActivityViewModelFactory
+    private lateinit var presenter: GameSetupViewModel
+
     private var playersNames = emptyList<TextInputEditText>()
-    private val  presenter = GameSetupViewModel(this)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        this.viewModelFactory = GameSetupActivityViewModelFactory(this)
+        presenter = ViewModelProvider(this, this.viewModelFactory).get(GameSetupViewModel::class.java)
+
         setContentView(R.layout.activity_game_setup)
         val player1Name: TextInputEditText =
             findViewById<View>(R.id.player1Name) as TextInputEditText
@@ -33,9 +42,9 @@ class GameSetupActivity : AppCompatActivity() {
         twoPlayersMod()
         radioGroup.setOnCheckedChangeListener { group, id ->
             when (group.indexOfChild(group.findViewById(id))) {
-                0 -> presenter.onPlayerChange(GameSetupViewModel.PlayerCount.two)
-                1 -> presenter.onPlayerChange(GameSetupViewModel.PlayerCount.three)
-                2 -> presenter.onPlayerChange(GameSetupViewModel.PlayerCount.four)
+                0 -> presenter.onPlayerChange(GameSetupViewModel.NumberOfPlayer.Two)
+                1 -> presenter.onPlayerChange(GameSetupViewModel.NumberOfPlayer.Three)
+                2 -> presenter.onPlayerChange(GameSetupViewModel.NumberOfPlayer.Four)
 
             }
         }
@@ -55,9 +64,6 @@ class GameSetupActivity : AppCompatActivity() {
             startActivity(intent)
             presenter.onValidate(playersNames.map { textInput -> textInput.toString()  })
         }
-
-
-
 
     }
 
@@ -88,7 +94,9 @@ class GameSetupActivity : AppCompatActivity() {
     fun goToNextScreen() {
         val intent = Intent(this, GameActivity::class.java)
         startActivity(intent)
+    }
 
-
+    fun showError() {
+        Log.d("player name ", "the player name can't be empty")
     }
 }
