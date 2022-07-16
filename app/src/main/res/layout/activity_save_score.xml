@@ -1,148 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<ScrollView
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".SaveScoreActivity"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/emptybackground">
 
-    <LinearLayout
-        android:orientation="vertical"
+    <TextView
+        android:id="@+id/hightScore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Score"
+        android:textColor="@color/backgroundLight"
+        android:textSize="40sp"
+        android:layout_marginTop="30dp"
+        android:layout_gravity="center" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@drawable/emptybackground">
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"/>
 
-        <TextView
-            android:id="@+id/hightScore"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Score"
-            android:textColor="@color/backgroundLight"
-            android:textSize="40sp"
-            android:layout_marginTop="30dp"
-            android:layout_gravity="center"
-            />
-
-        <TextView
-            android:id="@+id/Date_Score"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="5dp"
-            android:text="10/03/26"
-            android:textColor="@color/backgroundLight"
-            android:textSize="35sp" />
-
-        <TextView
-            android:id="@+id/Title_Score_Player1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Player 1 Score X"
-            android:textColor="@color/backgroundLight"
-            android:textSize="35sp"
-            android:layout_gravity="center"
-            />
-
-        <TextView
-            android:id="@+id/Title_Score_Player2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Player 2 Score X"
-            android:textColor="@color/backgroundLight"
-            android:textSize="35sp"
-            android:layout_gravity="center"
-            />
-
-        <TextView
-            android:id="@+id/Title_Score_Player3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Player 3 Score X"
-            android:textColor="@color/backgroundLight"
-            android:textSize="35sp"
-            android:layout_gravity="center"
-            />
-
-        <TextView
-            android:id="@+id/Title_Score_Player4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Player 4 Score X"
-            android:textColor="@color/backgroundLight"
-            android:textSize="35sp"
-            android:layout_gravity="center"
-            />
-
-        <View
-            android:id="@+id/horizontal_line"
-            android:layout_height="2dp"
-            android:layout_width="330dp"
-            android:background="@color/backgroundLight"
-            android:layout_marginTop="20dp"
-            android:layout_gravity="center"
-           />
-
-
-        <TextView
-            android:id="@+id/Date_Score_2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="10dp"
-            android:text="20/03/26"
-            android:textColor="@color/backgroundLight"
-            android:textSize="35sp" />
-
-        <TextView
-            android:id="@+id/Title_Score_Player1_2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Player 1 Score X"
-            android:textColor="@color/backgroundLight"
-            android:textSize="35sp"
-            android:layout_gravity="center"
-            />
-
-        <TextView
-            android:id="@+id/Title_Score_Player2_2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Player 2 Score X"
-            android:textColor="@color/backgroundLight"
-            android:textSize="35sp"
-            android:layout_gravity="center"
-            />
-
-        <TextView
-            android:id="@+id/Title_Score_Player3_2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Player 3 Score X"
-            android:textColor="@color/backgroundLight"
-            android:textSize="35sp"
-            android:layout_gravity="center"
-            />
-
-        <TextView
-            android:id="@+id/Title_Score_Player4_2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Player 4 Score X"
-            android:textColor="@color/backgroundLight"
-            android:textSize="35sp"
-            android:layout_gravity="center"
-            />
-
-        <View
-            android:id="@+id/horizontal_line_2"
-            android:layout_height="2dp"
-            android:layout_width="330dp"
-            android:background="@color/backgroundLight"
-            android:layout_marginTop="20dp"
-            android:layout_gravity="center"
-            />
-
-    </LinearLayout>
-</ScrollView>
+</LinearLayout>
