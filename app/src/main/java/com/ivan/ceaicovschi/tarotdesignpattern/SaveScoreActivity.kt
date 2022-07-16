@@ -10,7 +10,6 @@ class SaveScoreActivity : AppCompatActivity() {
     private lateinit var customAdapter: AdapteurSaveScore.CustomAdapter
 
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_save_score)

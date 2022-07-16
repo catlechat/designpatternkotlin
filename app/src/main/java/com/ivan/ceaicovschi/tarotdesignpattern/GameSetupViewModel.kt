@@ -1,46 +1,34 @@
 package com.ivan.ceaicovschi.tarotdesignpattern
 
-import android.content.Intent
-import android.widget.Button
-import androidx.core.content.ContextCompat.startActivity
+import androidx.lifecycle.ViewModel
 
-class GameSetupViewModel(private val view: GameSetupActivity) {
+class GameSetupViewModel(private val view: GameSetupActivity) : ViewModel() {
 
-    private var countPlayer : PlayerCount = PlayerCount.two
+    private var countPlayer : NumberOfPlayer = NumberOfPlayer.Two
 
-
-    enum class PlayerCount(val value: Int) {
-        two(2),
-        three(3),
-        four(4)
-
-
+    enum class NumberOfPlayer(val value: Int) {
+        Two(2),
+        Three(3),
+        Four(4)
     }
 
-
-    fun onPlayerChange(countPlayer: PlayerCount) {
+    fun onPlayerChange(countPlayer: NumberOfPlayer) {
         this.countPlayer = countPlayer
         when (countPlayer) {
-            PlayerCount.two -> view.twoPlayersMod()
-            PlayerCount.three -> view.threePlayersMod()
-            PlayerCount.four -> view.fourPlayersMod()
-
+            NumberOfPlayer.Two -> view.twoPlayersMod()
+            NumberOfPlayer.Three -> view.threePlayersMod()
+            NumberOfPlayer.Four -> view.fourPlayersMod()
         }
-
-
     }
 
     fun onValidate(names: List<String>) {
 
         if (names.take(countPlayer.value).any {
                 it.isEmpty()
-            }) {
-            //view.showError()
+        }) {
+            view.showError()
         } else {
             view.goToNextScreen()
         }
-
-
     }
-
 }
