@@ -1,6 +1,9 @@
 package com.ivan.ceaicovschi.tarotdesignpattern
 
+import android.app.Activity
 import android.content.Intent
+import android.content.res.ColorStateList
+import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -17,6 +20,14 @@ class GameSetupActivity : AppCompatActivity() {
     private lateinit var presenter: GameSetupViewModel
 
     private var playersNames = emptyList<TextInputEditText>()
+    var playersStringNames = ArrayList<String>()
+
+    private lateinit var player1Name: TextInputEditText
+    private lateinit var player2Name: TextInputEditText
+    private lateinit var player3Name: TextInputEditText
+    private lateinit var player4Name: TextInputEditText
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,16 +36,12 @@ class GameSetupActivity : AppCompatActivity() {
         presenter = ViewModelProvider(this, this.viewModelFactory).get(GameSetupViewModel::class.java)
 
         setContentView(R.layout.activity_game_setup)
-        val player1Name: TextInputEditText =
-            findViewById<View>(R.id.player1Name) as TextInputEditText
-        val player2Name: TextInputEditText =
-            findViewById<View>(R.id.player2Name) as TextInputEditText
-        val player3Name: TextInputEditText =
-            findViewById<View>(R.id.player3Name) as TextInputEditText
-        val player4Name: TextInputEditText =
-            findViewById<View>(R.id.player4Name) as TextInputEditText
+        player1Name = findViewById<View>(R.id.player1Name) as TextInputEditText
+        player2Name = findViewById<View>(R.id.player2Name) as TextInputEditText
+        player3Name = findViewById<View>(R.id.player3Name) as TextInputEditText
+        player4Name = findViewById<View>(R.id.player4Name) as TextInputEditText
+
         playersNames = listOf(player1Name, player2Name, player3Name, player4Name)
-        //read only, fix-size
         val radioGroup: RadioGroup = findViewById<View>(R.id.radioGroup1) as RadioGroup
 
 
@@ -48,21 +55,20 @@ class GameSetupActivity : AppCompatActivity() {
 
             }
         }
-        val okClick = findViewById<Button>(R.id.loadGameButtoin)
+
+        val okClick = findViewById<Button>(R.id.loadGameButton)
         okClick.setOnClickListener {
-            val playersNames = arrayListOf(
-                player1Name.text,
-                player2Name.text,
-                player3Name.text,
-                player4Name.text)
-            val intent = Intent(this, GameActivity::class.java)
+            playersStringNames = arrayListOf(
+                player1Name.text.toString(),
+                player2Name.text.toString(),
+                player3Name.text.toString(),
+                player4Name.text.toString())
+            presenter.onValidate(playersStringNames)
+        }
 
-            val args = Bundle()
-            args.putSerializable("players", playersNames)
-            intent.putExtra("args", args);
-
-            startActivity(intent)
-            presenter.onValidate(playersNames.map { textInput -> textInput.toString()  })
+        val backClick = findViewById<Button>(R.id.backButton)
+        backClick.setOnClickListener{
+            goBackScreen()
         }
 
     }
@@ -93,10 +99,24 @@ class GameSetupActivity : AppCompatActivity() {
 
     fun goToNextScreen() {
         val intent = Intent(this, GameActivity::class.java)
+        val args = Bundle()
+        args.putSerializable("players", playersStringNames)
+        intent.putExtra("args", args);
+
         startActivity(intent)
     }
 
+    fun goBackScreen() {
+        this.finish()
+    }
+
     fun showError() {
-        Log.d("player name ", "the player name can't be empty")
+        playersStringNames.forEachIndexed { index, name ->
+            if(name == ""){
+                playersNames[index].backgroundTintList = ColorStateList.valueOf(Color.RED )
+                Log.d("machintruc", "Empty name on line " + (index+1) )
+            }
+        }
+
     }
 }

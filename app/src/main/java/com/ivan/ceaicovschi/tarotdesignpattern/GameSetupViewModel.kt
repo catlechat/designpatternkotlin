@@ -1,5 +1,6 @@
 package com.ivan.ceaicovschi.tarotdesignpattern
 
+import android.util.Log
 import androidx.lifecycle.ViewModel
 
 class GameSetupViewModel(private val view: GameSetupActivity) : ViewModel() {
@@ -21,8 +22,7 @@ class GameSetupViewModel(private val view: GameSetupActivity) : ViewModel() {
         }
     }
 
-    fun onValidate(names: List<String>) {
-
+    fun onValidate(names: ArrayList<String>) {
         if (names.take(countPlayer.value).any {
                 it.isEmpty()
         }) {
