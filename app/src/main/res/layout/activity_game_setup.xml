@@ -71,6 +71,7 @@
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/player1Name"
+        android:maxLength="9"
         android:layout_width="250dp"
         android:layout_height="50dp"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -79,9 +80,11 @@
         android:backgroundTint="@color/backgroundLight"
         android:textColor="@color/backgroundLight"
         android:hint="Player 1"
+        android:textColorHint="@color/backgroundLight"
         />
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/player2Name"
+        android:maxLength="9"
         android:layout_width="250dp"
         android:layout_height="50dp"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -90,10 +93,13 @@
         android:backgroundTint="@color/backgroundLight"
         android:textColor="@color/backgroundLight"
         android:hint="Player 2"
+        android:textColorHint="@color/backgroundLight"
+
         />
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/player3Name"
         android:layout_width="250dp"
+        android:maxLength="9"
         android:layout_height="50dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -101,10 +107,13 @@
         android:backgroundTint="@color/backgroundLight"
         android:textColor="@color/backgroundLight"
         android:hint="Player 3"
+        android:textColorHint="@color/backgroundLight"
+
         />
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/player4Name"
         android:layout_width="250dp"
+        android:maxLength="9"
         android:layout_height="50dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -112,19 +121,33 @@
         android:backgroundTint="@color/backgroundLight"
         android:textColor="@color/backgroundLight"
         android:hint="Player 4"
+        android:textColorHint="@color/backgroundLight"
+
         />
 
 
     <Button
-        android:id="@+id/loadGameButtoin"
-        android:layout_width="70sp"
-        android:layout_height="60sp"
+        android:id="@+id/loadGameButton"
+        android:layout_width="120dp"
+        android:layout_height="60dp"
         android:backgroundTint="@color/backgroundLight"
         android:text="OK"
         android:textColor="@color/black"
         android:textSize="20sp"
         android:layout_marginTop="40dp"
         app:layout_constraintTop_toBottomOf="@id/player4Name"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+    <Button
+        android:id="@+id/backButton"
+        android:layout_width="120dp"
+        android:layout_height="60dp"
+        android:backgroundTint="@color/backgroundLight"
+        android:text="Back"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toBottomOf="@id/loadGameButton"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent" />
 
