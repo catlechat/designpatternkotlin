@@ -2,7 +2,6 @@ package com.ivan.ceaicovschi.tarotdesignpattern
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.widget.Button
 import android.widget.LinearLayout
 import android.widget.TextView
@@ -11,14 +10,12 @@ import androidx.core.view.isVisible
 import androidx.room.Room
 import java.text.SimpleDateFormat
 import java.util.*
-import kotlin.collections.ArrayList
 
 
 class GameActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_game)
-        val random = Random()
 
         val intent = intent
         val args = intent.getBundleExtra("args")
@@ -65,6 +62,12 @@ class GameActivity : AppCompatActivity() {
             scoreThree,
             scoreFour
         )
+        if (args.containsKey("scores")) {
+            val argScores = args.getSerializable("scores") as ArrayList<*>
+            for ((i, score) in argScores.withIndex()) {
+                scores[i].text = score as CharSequence?
+            }
+        }
 
         val namePlayerOne: TextView = findViewById(R.id.playerone)
         val namePlayerTwo: TextView = findViewById(R.id.playertwo)

@@ -85,6 +85,7 @@ class GameOverActivity : AppCompatActivity() {
         newGame.setOnClickListener(){
             val intent = Intent(this, GameSetupActivity::class.java)
             startActivity(intent)
+
         }
 
 

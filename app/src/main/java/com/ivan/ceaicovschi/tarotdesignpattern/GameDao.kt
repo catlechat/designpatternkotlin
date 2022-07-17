@@ -7,7 +7,7 @@ import androidx.room.Query
 
 @Dao
 interface GameDao{
-    @Query("SELECT * FROM Game")
+    @Query("SELECT * FROM Game ORDER BY date DESC")
     fun getAll(): List<Game>
 
     @Insert
