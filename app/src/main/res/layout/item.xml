@@ -4,6 +4,13 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content" >
 
+    <View
+        android:id="@+id/horizontal_line"
+        android:layout_height="2dp"
+        android:layout_width="330dp"
+        android:background="@color/backgroundLight"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center" />
 
     <TextView
         android:id="@+id/Date_Score"
@@ -35,6 +42,7 @@
 
     <TextView
         android:id="@+id/Title_Score_Player3"
+        android:visibility="gone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Player 3 Score X"
@@ -44,6 +52,7 @@
 
     <TextView
         android:id="@+id/Title_Score_Player4"
+        android:visibility="gone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Player 4 Score X"
@@ -51,12 +60,34 @@
         android:textSize="35sp"
         android:layout_gravity="center" />
 
-    <View
-        android:id="@+id/horizontal_line"
-        android:layout_height="2dp"
-        android:layout_width="330dp"
-        android:background="@color/backgroundLight"
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:layout_marginTop="20dp"
-        android:layout_gravity="center" />
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/resume"
+            android:layout_marginEnd="20dp"
+            android:layout_width="wrap_content"
+            android:textSize="25sp"
+            android:layout_height="wrap_content"
+            android:text="resume"
+
+            />
+        <Button
+            android:id="@+id/delete"
+            android:layout_width="wrap_content"
+            android:textSize="25sp"
+            android:layout_height="wrap_content"
+            android:text="delete"
+
+            />
+    </LinearLayout>
+
+
+
 
 </LinearLayout>

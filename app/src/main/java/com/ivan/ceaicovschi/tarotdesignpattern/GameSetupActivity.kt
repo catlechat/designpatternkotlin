@@ -9,9 +9,13 @@ import android.util.Log
 import android.view.View
 import android.widget.Button
 import android.widget.RadioGroup
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.google.android.material.textfield.TextInputEditText
+import java.text.SimpleDateFormat
+import java.util.*
+import kotlin.collections.ArrayList
 
 
 class GameSetupActivity : AppCompatActivity() {
@@ -118,5 +122,42 @@ class GameSetupActivity : AppCompatActivity() {
             }
         }
 
+    }
+
+    private fun getGame(playerNames: ArrayList<*>, scores: ArrayList<TextView>) : Game {
+        val id = System.currentTimeMillis()
+        val game = Game(
+            id,
+            PlayerResult(
+                id + 1,
+                playerNames[0].toString(),
+                scores[0].text.toString()
+            ),
+            PlayerResult(
+                id + 2,
+                playerNames[1].toString(),
+                scores[1].text.toString()
+            ),
+            if (playerNames[2].toString() != "") {
+                PlayerResult(
+                    id + 3,
+                    playerNames[2].toString(),
+                    scores[2].text.toString()
+                )
+            } else {
+                null
+            },
+            if (playerNames[3].toString() != "") {
+                PlayerResult(
+                    id + 4,
+                    playerNames[3].toString(),
+                    scores[3].text.toString()
+                )
+            } else {
+                null
+            },
+            SimpleDateFormat("dd-MM-yyyy HH:mm", Locale.getDefault()).format(Date())
+        )
+        return game
     }
 }
