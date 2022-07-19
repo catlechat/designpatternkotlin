@@ -1,10 +1,7 @@
 package com.ivan.ceaicovschi.tarotdesignpattern
 
 import androidx.room.*
-import com.google.gson.Gson
-import com.google.gson.reflect.TypeToken
 import java.io.Serializable
-
 
 @Entity
 data class Game (
@@ -17,7 +14,7 @@ data class Game (
 ) : Serializable
 
 @Entity
-data class PlayerResult(
+data class PlayerResult (
     @PrimaryKey(autoGenerate = true) val id: Long,
     @ColumnInfo(name = "name") var name : String,
     @ColumnInfo(name = "score") var score : String

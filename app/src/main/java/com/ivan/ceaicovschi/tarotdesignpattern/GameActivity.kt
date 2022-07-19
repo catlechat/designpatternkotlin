@@ -11,7 +11,6 @@ import androidx.room.Room
 import java.text.SimpleDateFormat
 import java.util.*
 
-
 class GameActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,13 +26,11 @@ class GameActivity : AppCompatActivity() {
         val btnSaveGame: Button = findViewById<Button>(R.id.saveGame)
         val btnGameOver: Button = findViewById<Button>(R.id.buttonfinish)
 
-
-
-
         val plusOne: Button = findViewById<Button>(R.id.buttonplusone)
         val plusTwo: Button = findViewById<Button>(R.id.buttonplustwo)
         val plusThree: Button = findViewById<Button>(R.id.buttonplusthree)
         val plusFour: Button = findViewById<Button>(R.id.buttonplusfour)
+
         val plusButtons = arrayListOf(
             plusOne,
             plusTwo,
@@ -45,6 +42,7 @@ class GameActivity : AppCompatActivity() {
         val minusOne: Button = findViewById<Button>(R.id.buttonminusone)
         val minusThree: Button = findViewById<Button>(R.id.buttonminusthree)
         val minusFour: Button = findViewById<Button>(R.id.buttonminusfour)
+
         val minusButtons = arrayListOf(
             minusOne,
             minusTwo,
@@ -56,12 +54,14 @@ class GameActivity : AppCompatActivity() {
         val scoreTwo: TextView = findViewById(R.id.scoretwo)
         val scoreThree: TextView = findViewById(R.id.scorethree)
         val scoreFour: TextView = findViewById(R.id.scorefour)
+
         val scores = arrayListOf(
             scoreOne,
             scoreTwo,
             scoreThree,
             scoreFour
         )
+
         if (args.containsKey("scores")) {
             val argScores = args.getSerializable("scores") as ArrayList<*>
             for ((i, score) in argScores.withIndex()) {
@@ -73,21 +73,24 @@ class GameActivity : AppCompatActivity() {
         val namePlayerTwo: TextView = findViewById(R.id.playertwo)
         val namePlayerThree: TextView = findViewById(R.id.playerthree)
         val namePlayerFour: TextView = findViewById(R.id.playerfour)
+
         val playerNamesFields = arrayListOf(
             namePlayerOne,
             namePlayerTwo,
             namePlayerThree,
-            namePlayerFour)
+            namePlayerFour
+        )
 
         for ((count, textField) in playerNamesFields.withIndex()) {
             textField.text = playerNames[count].toString()
+
             if(count == 2 && textField.text != ""){
                 thirdPlayer.isVisible = true
             }
+
             if(count == 3 && textField.text != ""){
                 fourthPlayer.isVisible = true
             }
-
         }
 
         for ((i, plusButton) in plusButtons.withIndex()) {
@@ -110,7 +113,7 @@ class GameActivity : AppCompatActivity() {
         btnGameOver.setOnClickListener {view ->
 
             val over = Intent(view.context, GameOverActivity::class.java)
-            over.putExtra("game", getGame(playerNames, scores));
+            over.putExtra("game", getGame(playerNames, scores))
             view.context.startActivity(over)
         }
 

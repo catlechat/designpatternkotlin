@@ -3,7 +3,6 @@ package com.ivan.ceaicovschi.tarotdesignpattern
 import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.Intent
-import android.content.Intent.getIntent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -15,7 +14,6 @@ import androidx.core.content.ContextCompat.startActivity
 import androidx.core.view.isVisible
 import androidx.recyclerview.widget.RecyclerView
 import androidx.room.Room
-
 
 class AdaptorLoadScore {
     internal class CustomAdapter(private var itemsList: List<Game>) :
@@ -42,28 +40,33 @@ class AdaptorLoadScore {
             val item = itemsList[position]
             holder.titleScorePlayer1.text = item.player1.name + " with " + item.player1.score
             holder.titleScorePlayer2.text = item.player2.name + " with " + item.player2.score
-            if(item.player3 != null){
+
+            if(item.player3 != null) {
                 holder.titleScorePlayer3.isVisible = true
                 holder.titleScorePlayer3.text = item.player3?.name + " with " + item.player3?.score
             }
-            if(item.player4 != null){
+
+            if(item.player4 != null) {
                 holder.titleScorePlayer4.isVisible = true
                 holder.titleScorePlayer4.text = item.player4?.name + " with " + item.player4?.score
             }
+
             holder.dateScore.text = item.date
 
             holder.resume.setOnClickListener{
                 val playersStringNames = arrayListOf(
                     item.player1.name,
                     item.player2.name)
+
                 if(item.player3?.name == null){
                     playersStringNames.add("")
-                }else{
+                } else {
                     playersStringNames.add(item.player3?.name.toString())
                 }
+
                 if(item.player4?.name == null){
                     playersStringNames.add("")
-                }else{
+                } else {
                     playersStringNames.add(item.player4?.name.toString())
                 }
 
@@ -78,7 +81,7 @@ class AdaptorLoadScore {
                 val args = Bundle()
                 args.putSerializable("players", playersStringNames)
                 args.putSerializable("scores", scores)
-                intent.putExtra("args", args);
+                intent.putExtra("args", args)
                 startActivity(it.context, intent, null)
             }
 
@@ -92,11 +95,7 @@ class AdaptorLoadScore {
                 val intent = Intent(it.context, LoadGameActivity::class.java)
                 (it.context as Activity).finish()
                 startActivity(it.context, intent, null)
-
-
             }
-
-
         }
 
         override fun getItemCount(): Int {
